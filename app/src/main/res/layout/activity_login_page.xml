@@ -5,17 +5,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".OrgnzrMainPage"
-        >
+        tools:context=".LoginPage">
 
     <TextView
-            android:text="Please enter user information:"
+            android:text="Please login:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/clickCounter"
             android:padding="10dp" android:textColor="@color/text_color"
             android:textSize="@dimen/text_size"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="128dp"
+            android:layout_marginStart="128dp" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="68dp"/>
     <ImageView
             android:layout_width="66dp"
@@ -32,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="right"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCreateAccount"
+            android:id="@+id/btnCreateAccountLogin"
             app:layout_constraintBottom_toBottomOf="@+id/textureView"
             android:layout_marginBottom="40dp" app:layout_constraintEnd_toEndOf="@+id/textureView"
             android:layout_marginEnd="20dp" android:layout_marginRight="20dp"/>
@@ -53,48 +52,30 @@
     <EditText
             android:layout_width="288dp"
             android:layout_height="48dp"
-            android:inputType="textPersonName"
-            android:hint="Name"
+            android:inputType="text"
+            android:hint="Enter Username"
             android:ems="10"
-            android:id="@+id/name"
+            android:id="@+id/usernameLogin"
             app:layout_constraintStart_toStartOf="@+id/textureView" android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp" app:layout_constraintTop_toTopOf="@+id/textureView"
             android:layout_marginTop="8dp"/>
-    <EditText
-            android:layout_width="286dp"
-            android:layout_height="46dp"
-            android:inputType="textEmailAddress"
-            android:hint="Email address"
-            android:ems="10"
-            android:id="@+id/emailAddress"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/name"/>
-    <EditText
-            android:layout_width="286dp"
-            android:layout_height="46dp"
-            android:inputType="text"
-            android:hint="Username"
-            android:ems="10"
-            android:id="@+id/username"
-            app:layout_constraintTop_toBottomOf="@+id/emailAddress"
-            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/emailAddress"/>
+
     <EditText
             android:layout_width="281dp"
             android:layout_height="46dp"
             android:inputType="textPassword"
-            android:hint="Password"
+            android:hint="Enter Password"
             android:ems="10"
-            android:id="@+id/userPassword"
-            app:layout_constraintTop_toBottomOf="@+id/username"
-            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/username"
+            android:id="@+id/userPasswordLogin"
+            app:layout_constraintTop_toBottomOf="@+id/usernameLogin"
+            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/usernameLogin"
     />
     <Button
-            android:id="@+id/btnSwitchLogin"
-            android:text="Switch to Login"
+            android:id="@+id/btnLogin"
+            android:text="Login"
             android:layout_width="145dp"
             android:layout_height="48dp"
             app:layout_constraintStart_toStartOf="@+id/textureView" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="@+id/textureView"
             android:layout_marginBottom="40dp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

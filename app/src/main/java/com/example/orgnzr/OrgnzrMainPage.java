@@ -1,5 +1,6 @@
 package com.example.orgnzr;
 
+import android.content.Intent;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.view.View;
 public class OrgnzrMainPage extends AppCompatActivity {
 
     EditText name, emailAddress, username, userPassword;
-    Button createAccount;
+    Button createAccount, login;
     DBHelper DB;
 
     @Override
@@ -23,6 +24,7 @@ public class OrgnzrMainPage extends AppCompatActivity {
         userPassword= findViewById(R.id.userPassword);
 
         createAccount = findViewById(R.id.btnCreateAccount);
+        login = findViewById(R.id.btnSwitchLogin);
 
         DB = new DBHelper(this);
 
@@ -41,6 +43,16 @@ public class OrgnzrMainPage extends AppCompatActivity {
                     Toast.makeText(OrgnzrMainPage.this,"Account Not Created",Toast.LENGTH_SHORT).show();
             }
         });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intentLogin = new Intent(OrgnzrMainPage.this, LoginPage.class);
+               startActivity(intentLogin);
+            }
+        });
+
+
     }
 
     }
