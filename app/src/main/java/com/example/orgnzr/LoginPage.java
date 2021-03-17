@@ -19,16 +19,31 @@ public class LoginPage extends AppCompatActivity {
 
         login = findViewById(R.id.btnLogin);
         createAccount = findViewById(R.id.btnCreateAccountLogin);
+        username = findViewById(R.id.usernameLogin);
+        userPassword = findViewById(R.id.userPasswordLogin);
 
-
+        DB = new DBHelper(this);
         //Setup a boolean function here to evaluate whether login was successful or not
         //make sure that if boolean isn't successful a Toast alert pops up
         //upon successful login, redirect to calendar view
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentLoginPage = new Intent(LoginPage.this,Calendar.class);
-                startActivity(intentLoginPage);
+                String usernameTXT = username.getText().toString();
+                String passwordTXT = userPassword.getText().toString();
+
+                Boolean verifyUserLogin = DB.authenticateUsernamePassword(usernameTXT,passwordTXT);
+                if(verifyUserLogin){
+                    Toast.makeText(LoginPage.this,"Welcome " + usernameTXT + "!",Toast.LENGTH_SHORT).show();
+                    Intent intentLoginPage = new Intent(LoginPage.this,Calendar.class);
+
+                    //sends username to calendar page for further use
+                    intentLoginPage.putExtra("username", usernameTXT);
+                    startActivity(intentLoginPage);
+                } else{
+                    Toast.makeText(LoginPage.this,"Account not found",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -37,6 +52,10 @@ public class LoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentCreateAccount = new Intent(LoginPage.this,OrgnzrMainPage.class);
                 startActivity(intentCreateAccount);
+
+
+
+
             }
         });
     }

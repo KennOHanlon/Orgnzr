@@ -27,23 +27,6 @@
             android:layout_marginTop="4dp"/>
     <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content" android:layout_height="wrap_content"
                                               android:id="@+id/barrier" app:barrierDirection="top"/>
-    <Button
-            android:text="Create Account"
-            android:layout_width="wrap_content"
-            android:layout_gravity="right"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnCreateAccount"
-            app:layout_constraintBottom_toBottomOf="@+id/textureView"
-            android:layout_marginBottom="40dp" app:layout_constraintEnd_toEndOf="@+id/textureView"
-            android:layout_marginEnd="20dp" android:layout_marginRight="20dp"/>
-    <TextView
-            android:text="Orgnzr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="364dp"
-            android:layout_marginStart="364dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="4dp"/>
     <TextureView
             android:layout_width="335dp"
             android:layout_height="434dp" android:id="@+id/textureView"
@@ -59,7 +42,8 @@
             android:id="@+id/name"
             app:layout_constraintStart_toStartOf="@+id/textureView" android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp" app:layout_constraintTop_toTopOf="@+id/textureView"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:nextFocusForward="@+id/emailAddress"/>
     <EditText
             android:layout_width="286dp"
             android:layout_height="46dp"
@@ -68,7 +52,8 @@
             android:ems="10"
             android:id="@+id/emailAddress"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/name"/>
+            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/name"
+            android:nextFocusForward="@+id/username"/>
     <EditText
             android:layout_width="286dp"
             android:layout_height="46dp"
@@ -77,7 +62,8 @@
             android:ems="10"
             android:id="@+id/username"
             app:layout_constraintTop_toBottomOf="@+id/emailAddress"
-            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/emailAddress"/>
+            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/emailAddress"
+            android:nextFocusForward="@+id/userPassword"/>
     <EditText
             android:layout_width="281dp"
             android:layout_height="46dp"
@@ -87,7 +73,8 @@
             android:id="@+id/userPassword"
             app:layout_constraintTop_toBottomOf="@+id/username"
             android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="@+id/username"
-    />
+            android:nextFocusForward="@+id/btnSwitchLogin"/>
+
     <Button
             android:id="@+id/btnSwitchLogin"
             android:text="Switch to Login"
@@ -95,6 +82,27 @@
             android:layout_height="48dp"
             app:layout_constraintStart_toStartOf="@+id/textureView" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="@+id/textureView"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="40dp"
+            android:nextFocusForward="@+id/btnCreateAccount"/>
+    <Button
+            android:text="Create Account"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCreateAccount"
+            app:layout_constraintBottom_toBottomOf="@+id/textureView"
+            android:layout_marginBottom="40dp" app:layout_constraintEnd_toEndOf="@+id/textureView"
+            android:layout_marginEnd="20dp" android:layout_marginRight="20dp"
+            android:nextFocusForward="@+id/name"/>
+    <TextView
+            android:text="Orgnzr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="364dp"
+            android:layout_marginStart="364dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

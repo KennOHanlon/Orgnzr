@@ -7,10 +7,57 @@
         android:layout_height="match_parent"
         tools:context=".Calendar">
 
+    <Button
+            android:text="Make Appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/makeAppointmentCalendar"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"/>
     <TextView
             android:text="Calendar View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="164dp" android:layout_marginTop="160dp" android:layout_marginStart="164dp"/>
+            android:layout_marginLeft="160dp" android:layout_marginTop="72dp" android:layout_marginStart="160dp"/>
+    <CalendarView
+            android:layout_width="352dp"
+            android:layout_height="363dp" android:id="@+id/calendarView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="120dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"/>
+    <ImageView
+            android:layout_width="66dp"
+            android:layout_height="53dp"
+            android:src="@drawable/calendar"
+            android:id="@+id/calendarImage"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"/>
+    <TextView
+            android:text="Orgnzr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="364dp"
+            android:layout_marginStart="364dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"/>
+    <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameCalendar"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/calendarImage"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"/>
+    <Button
+            android:text="View Week"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewWeekCalendar"
+            app:layout_constraintStart_toEndOf="@+id/makeAppointmentCalendar"
+            android:layout_marginLeft="20dp" android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="@+id/makeAppointmentCalendar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
