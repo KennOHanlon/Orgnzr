@@ -35,7 +35,7 @@ public class LoginPage extends AppCompatActivity {
                 Boolean verifyUserLogin = DB.authenticateUsernamePassword(usernameTXT,passwordTXT);
                 if(verifyUserLogin){
                     Toast.makeText(LoginPage.this,"Welcome " + usernameTXT + "!",Toast.LENGTH_SHORT).show();
-                    Intent intentLoginPage = new Intent(LoginPage.this,Calendar.class);
+                    Intent intentLoginPage = new Intent(LoginPage.this,CalendarActivity.class);
 
                     //sends username to calendar page for further use
                     intentLoginPage.putExtra("username", usernameTXT);

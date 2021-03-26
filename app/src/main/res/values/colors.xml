@@ -8,4 +8,5 @@
     <color name="cardViewBox">#F5FCFF</color>
     <color name="timeViewBox2">#DBF3FA</color>
     <color name="cardViewBox2">#F5F5F5</color>
+    <color name="appointmentText">#F6F5E1</color>
 </resources>

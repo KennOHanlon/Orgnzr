@@ -15,12 +15,19 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table Userdetails(username TEXT primary key, name TEXT, email_address TEXT, user_password TEXT)");
-        //DB.execSQL("create Table ");
+        DB.execSQL("create Table Appointmentdetails(appointmentID INTEGER primary key AUTOINCREMENT, " +
+                " clientname TEXT NOT NULL, " +
+                " appointment_date TEXT NOT NULL, " +
+                " appointment_time TEXT NOT NULL, " +
+                " appointment_hour TEXT NOT NULL, " +
+                " username TEXT, " +
+                " FOREIGN KEY (username) REFERENCES Userdetails(username))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         DB.execSQL("drop Table if exists Userdetails");
+        DB.execSQL("drop Table if exists Appointmentdetails");
     }
 
     public Boolean createUserAccount(String username,String name, String emailAddress, String userPassword){
@@ -51,5 +58,32 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
 
+    }
+
+    //Build appointment addition function here
+    public Boolean createAppointment(String clientName, String appointmentDate, String appointmentTime, String appointmentHour, String username){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("clientname", clientName);
+        contentValues.put("appointment_date", appointmentDate);
+        contentValues.put("appointment_time", appointmentTime);
+        contentValues.put("appointment_hour",appointmentHour);
+        contentValues.put("username", username);
+
+
+        long result=DB.insert("Appointmentdetails","null",contentValues);
+        if(result==-1){
+            return false;
+        } else{
+            return true;
+        }
+    }
+
+    public Cursor fetchAppointmentByHour(String username, String appointmentDate, String appointmentHour) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Appointmentdetails where username = ? and appointment_date = ? and appointment_hour = ?",
+                new String[]{username, appointmentDate, appointmentHour});
+
+        return cursor;
     }
 }

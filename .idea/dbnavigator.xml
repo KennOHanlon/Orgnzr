@@ -25,28 +25,27 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="1d263d38-8737-4f4a-b1c0-1083abc029c2">
-        <schema name="main" object-types="table, view" />
+      <connection connection-id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d">
+        <schema name="main" object-types="column, table, view, index, constraint, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="1d263d38-8737-4f4a-b1c0-1083abc029c2">
-      <console name="UserAccounts" type="STANDARD" schema="main" session="Main" />
+    <connection id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d">
+      <console name="Orgnzr" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d" object-ref="schemas/main/tables/Appointmentdetails" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="1d263d38-8737-4f4a-b1c0-1083abc029c2" />
+    <connection id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="1d263d38-8737-4f4a-b1c0-1083abc029c2" dataset="main.Userdetails" active-filter-id="">
-      <filter id="143676a6-3a5e-4b96-82d6-e80f37da159a" name="Users" temporary="false" custom-name="true" type="basic" join-type="AND">
-        <condition column="username" operator="=" value="" active="true" />
-      </filter>
-    </filter-actions>
+    <filter-actions connection-id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d" dataset="main.Userdetails" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d" dataset="main.Appointmentdetails" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers>
@@ -76,9 +75,9 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="1d263d38-8737-4f4a-b1c0-1083abc029c2" active="true">
+      <connection id="1d4ef1a0-3962-4203-930e-e7c86de8ad2d" active="true">
         <database>
-          <name value="UserAccounts" />
+          <name value="Orgnzr" />
           <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />

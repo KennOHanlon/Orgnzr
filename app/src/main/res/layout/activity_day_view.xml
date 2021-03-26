@@ -11,7 +11,8 @@
             android:text="TextView"
             android:textSize="24dp"
             android:layout_width="134dp"
-            android:layout_height="28dp" android:id="@+id/todaysDate"
+            android:layout_height="28dp"
+            android:id="@+id/todaysDate"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp"
@@ -62,7 +63,9 @@
                         android:layout_gravity="right"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/add_icon"
-                        android:id="@+id/addEightAMDaily"/>
+                        android:id="@+id/addEightAMDaily"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -542,7 +545,8 @@
                         android:layout_gravity="right"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/add_icon"
-                        android:id="@+id/addNinePMDaily"/>
+                        android:id="@+id/addNinePMDaily"
+                        android:clickable="true"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -550,19 +554,13 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <Button
-            android:text="Make Appointment"
+            android:text="New Appointment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMakeAppointmentDaily"
-            app:layout_constraintStart_toEndOf="@+id/todaysDate" android:layout_marginLeft="88dp"
-            android:layout_marginStart="88dp" app:layout_constraintTop_toTopOf="parent"/>
-    <Button
-            android:text="View Month"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnMonthlyViewDaily"
-            app:layout_constraintStart_toEndOf="@+id/todaysDate" android:layout_marginLeft="88dp"
-            android:layout_marginStart="88dp" app:layout_constraintTop_toBottomOf="@+id/btnMakeAppointmentDaily"/>
+            app:layout_constraintStart_toEndOf="@+id/todaysDate" android:layout_marginLeft="76dp"
+            android:layout_marginStart="76dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
